@@ -5,23 +5,23 @@
 ; you can make change for 3 units in three ways:{1,1,1} ,{1,2} , and{3} .
 
 
-# Using python
+# Using recursion in python
 def numWays( numways coin-amount, number-of-coin-types ):
     if numways coin-amount < 0 or len(number-of-coin-types) == 0: 
         return 0
     if numways coin-amount == 0: 
         return 1
     return numWays( numways coin-amount, number-of-coin-types[1:]) + 
-    				numWays( numways coin-amount - number-of-coin-types[0], number-of-coin-types )
+    		numWays( numways coin-amount - number-of-coin-types[0], number-of-coin-types )
 
 
 
 
 
 
-; Using Scheme
+; Using recursion in Scheme
 (define (numways coin-amount  number-of-coin-types)
 (cond ((= coin-amount 0) 1)
-	((or (< coin-amount 0) (= (length number-of-coin-types) 0)) 0)
-	(else (+ (countr coin-amount  (cdr number-of-coin-types)) 
-	 					(countr (- coin-amount (car number-of-coin-types)) number-of-coin-types)))))
+   ((or (< coin-amount 0) (= (length number-of-coin-types) 0)) 0)
+      (else (+ (countr coin-amount  (cdr number-of-coin-types)) 
+	 (countr (- coin-amount (car number-of-coin-types)) number-of-coin-types)))))
