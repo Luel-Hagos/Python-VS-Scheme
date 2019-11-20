@@ -7,12 +7,12 @@
 
 # Using recursion in python
 def numWays( numways coin-amount, number-of-coin-types ):
-    if numways coin-amount < 0 or len(number-of-coin-types) == 0: 
+    if  coin-amount < 0 or len(number-of-coin-types) == 0: 
         return 0
-    if numways coin-amount == 0: 
+    if coin-amount == 0: 
         return 1
-    return numWays( numways coin-amount, number-of-coin-types[1:]) + 
-    		numWays( numways coin-amount - number-of-coin-types[0], number-of-coin-types )
+    return numWays(  coin-amount, number-of-coin-types[1:]) + 
+    		numWays( coin-amount - number-of-coin-types[0], number-of-coin-types )
 
 
 
