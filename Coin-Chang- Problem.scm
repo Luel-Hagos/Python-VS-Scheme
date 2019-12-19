@@ -23,5 +23,11 @@ def numWays( numways coin-amount, number-of-coin-types ):
 (define (numways coin-amount  number-of-coin-types)
 (cond ((= coin-amount 0) 1)
    ((or (< coin-amount 0) (= (length number-of-coin-types) 0)) 0)
-      (else (+ (countr coin-amount  (cdr number-of-coin-types)) 
-	 (countr (- coin-amount (car number-of-coin-types)) number-of-coin-types)))))
+      (else (+ (numways coin-amount  (cdr number-of-coin-types)) 
+	 (numways (- coin-amount (car number-of-coin-types)) number-of-coin-types)))))
+
+
+
+; how to use it
+(numways 100  '(50 25 10 5 1)) ; it will give us 292
+
